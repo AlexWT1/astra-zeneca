@@ -1,15 +1,26 @@
 /* Vars */
 :root {
   --light-color: #fff;
-  --purple-color: #0F488B;
+  --purple-color: #0f488b;
 }
-
-
 
 /* Base styles */
 
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
 html {
   box-sizing: border-box;
+  min-width: 320px;
+}
+
+body {
+  font-size: 15px;
+  font-family: 'Arial';
+  font-weight: 700;
 }
 
 *,
@@ -18,9 +29,7 @@ html {
   box-sizing: inherit;
 }
 
-
 img {
-  height: auto;
   max-width: 100%;
   object-fit: cover;
 }
@@ -36,7 +45,6 @@ a {
   overflow: hidden;
 }
 
-
 .main {
   flex-grow: 1;
 }
@@ -48,6 +56,12 @@ a {
 }
 
 /* Helper styles */
+svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .btn-reset {
   border: none;
   padding: 0;
@@ -76,59 +90,120 @@ a {
   }
 }
 
-
-
-
 /* Header */
+
 .header__wrapper {
-  padding: 28px 0 48px;
+  padding: 35px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header__left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 26px;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: clamp(30px, 4vw, 68px);
+}
+/* Logo */
+
+.logo {
+  width: 180px;
+  height: 44px;
+  align-self: flex-end;
+}
+
+.logo-skolkovo {
+  width: 70px;
+  height: 50px;
+}
+
+/* Btn */
+
+.btn {
+  display: block;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3f4444;
+  line-height: 137.5%;
+  letter-spacing: 0.1px;
+  background-color: #f0ab00;
+  cursor: pointer;
 }
 
 /* burger */
 .burger {
+  position: relative;
   display: none;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
   border-radius: 36px;
-  background:  #F5F5F5;
+  background-color: #f5f5f5;
+  z-index: 10;
+}
+
+.burger-flow {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: #fff;
 }
 
 .burger span {
-  position: relative;
-  height: 2px;
-  width: 16px;
-  background-color: #830051;
-}
-
-.burger span::before {
+  display: block;
   position: absolute;
-  top: 4px;
-  content: "";
-  height: 100%;
   width: 16px;
-  background-color: #830051;
-}
-
-.burger span::after {
-  position: absolute;
-  top: -4px;
-  content: "";
   height: 2px;
-  width: 16px;
   background-color: #830051;
+  transition: all 0.3s ease;
 }
 
+.burger span:first-child {
+  top: 11px;
+}
+.burger span:nth-child(2) {
+  top: 16px;
+}
+.burger span:last-child {
+  top: 21px;
+}
 
+.flex {
+  display: flex !important;
+}
+
+.rmSecond {
+  opacity: 0;
+}
+.centerizing {
+  top: 17px !important;
+  background-color: #9db0ac !important;
+}
+.rotF {
+  transform: rotate(45deg);
+}
+.rotL {
+  transform: rotate(-45deg);
+}
 
 /* Nav */
+.nav {
+  align-self: center;
+}
+
 .nav__list {
   display: flex;
-  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(25px, 3vw, 50px);
 }
 
 .nav__link {
@@ -137,13 +212,279 @@ a {
   color: var(--purple-color);
 }
 
+.nav-contact {
+  display: none;
+}
+
+.nav-contact button {
+  margin-bottom: 30px;
+}
+
+.nav-contact__info-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 166.667%;
+  color: #3f4444;
+}
+
+.nav-contact__info-name {
+  margin: 0;
+  margin-bottom: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 160%;
+  color: #3f4444;
+}
+
+.nav-contact__info-mail {
+  margin-bottom: 17px;
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 133.333%;
+  color: #830051;
+}
+
+.nav-contact__info-tel {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #3f4444;
+}
+
+.nav-contact__info-tel--add {
+  font-size: 12px;
+}
+
+/* Hero */
+
+.hero {
+}
+.hero__wrapper {
+  position: relative;
+  padding-top: 58px;
+}
+
+.hero__top {
+  margin-bottom: clamp(48px, 4vw, 76px);
+  max-width: 550px;
+}
+
+.hero__title {
+  margin: 0;
+  margin-bottom: 27px;
+  font-size: clamp(30px, 4vw, 60px);
+  font-weight: 700;
+  line-height: 116.667%;
+  color: #830051;
+}
+
+.hero__descr {
+  margin: 0;
+  font-size: clamp(16px, 4vw, 24px);
+  font-weight: 400;
+  color: #3f4444;
+}
+
+.hero__content {
+  padding: clamp(50px, 4vw, 80px) 0 clamp(40px, 8vw, 160px);
+  background-image: url('../img/hero-bg.jpg');
+  background-color: rgba(131, 0, 81);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
+.hero__block {
+}
+
+.hero__block-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.hero__text {
+  margin: 0;
+  max-width: clamp(340px, 26vw, 550px);
+  margin-bottom: 44px;
+  font-size: clamp(15px, 4vw, 17px);
+  font-weight: 400;
+  line-height: 158.824%;
+  color: var(--light-color);
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--light-color);
+}
+
+.hero__info span {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.hero__info time {
+  font-size: 30px;
+  line-height: 133.333%;
+}
+
+.hero__banner {
+  padding: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: inline-flex;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  bottom: 13%;
+  right: 0;
+  width: clamp(340px, 49.5vw, 940px);
+  height: clamp(280px, 44.5vw, 780px);
+  background-color: #f0ab00;
+}
+
+.hero__banner img {
+  align-self: flex-end;
+}
+
+.hero__banner-text {
+  display: inline-block;
+  font-size: 260px;
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+.hero__banner-text--01 {
+  position: absolute;
+  top: 27%;
+  left: -9%;
+  transform: rotate(90deg);
+}
+
+.hero__banner-text--02 {
+  position: absolute;
+  top: 3%;
+  right: 9%;
+}
+
+.hero__banner-text--03 {
+  position: absolute;
+  font-size: 110px;
+  color: white;
+  top: 43%;
+  right: 10%;
+}
+
+.hero__banner-img {
+  position: absolute;
+  left: 24%;
+  bottom: 0;
+}
 
 /* Media */
-@media (max-width: 1145px) {
+
+@media (max-width: 1024px) {
+  .hero__wrapper {
+    padding-top: 0;
+  }
+  .hero__top {
+    max-width: 100%;
+  }
+
+  .hero__descr {
+    max-width: 340px;
+  }
+
+  .hero__banner {
+    top: 17%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__wrapper {
+    padding: 30px 0 40px;
+  }
+  .logo {
+    width: clamp(148px, 45%, 174px);
+    height: clamp(36px, 45%, 42px);
+  }
   .burger {
     display: flex;
   }
-  .nav{
+
+  .nav {
     display: none;
+    padding-top: 50px;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nav__link {
+    font-size: 20px;
+  }
+
+  .nav-contact {
+    display: block;
+  }
+
+  .logo-skolkovo {
+    width: 58px;
+    height: 42px;
+  }
+
+  .hero__block {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero__block-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero__info time {
+    font-size: 24px;
+  }
+
+  .hero__block-content button {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .header__wrapper {
+    padding: 20px 0 32px;
+  }
+
+  .hero__title {
+    text-align: center;
+  }
+
+  .hero__descr {
+    text-align: center;
+  }
+
+  .hero__banner {
+    left: 0;
+    width: 100%;
   }
 }
