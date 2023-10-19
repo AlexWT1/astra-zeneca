@@ -1,8 +1,31 @@
+let html = document.querySelector('html');
 const burger = document.querySelector('.burger');
 const burgerSpan = document.querySelectorAll('.burger span');
 const nav = document.querySelector('.nav');
 let move = false;
 
+const moreText = document.getElementById('more');
+const moreBtn = document.getElementById('moreBtn');
+
+moreBtn.addEventListener('click', function () {
+  if (moreText.style.display === 'none') {
+    moreText.style.display = 'inline';
+    moreBtn.innerHTML = 'Скрыть';
+  } else {
+    moreBtn.innerHTML = 'Читать далее';
+    moreText.style.display = 'none';
+  }
+});
+
+//video player
+const player = new Playerjs({ id: 'player', file: '../files/video.mp4', poster: 'img/poster.png' });
+
+// disabling scrolling
+document.querySelector('.burger').onclick = function () {
+  html.classList.toggle('unscroll');
+};
+
+// burger
 burger.addEventListener('click', () => {
   if (!move) {
     burgerSpan[1].classList.add('rmSecond');
@@ -20,22 +43,7 @@ burger.addEventListener('click', () => {
   move = !move;
 });
 
-$(function () {
-  var $videoContainer = $('.video'),
-    $videoControl = $('.video-control'),
-    $video = $('#video')[0];
-
-  $videoControl.click(function () {
-    if ($video.paused) {
-      $video.play();
-      $videoContainer.addClass('is-playing');
-    } else {
-      $video.pause();
-      $videoContainer.removeClass('is-playing');
-    }
-  });
-});
-
+//swiper slider
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',

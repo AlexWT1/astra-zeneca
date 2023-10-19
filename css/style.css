@@ -69,6 +69,14 @@ svg {
   cursor: pointer;
 }
 
+.btn-more {
+  display: none;
+}
+
+.inline {
+  display: inline;
+}
+
 .list-reset {
   list-style: none;
   margin: 0;
@@ -96,7 +104,7 @@ svg {
 
 .section-title {
   margin: 0;
-  font-size: 50px;
+  font-size: clamp(26px, 4.2vw, 50px);
   font-weight: 700;
   line-height: 120%;
   color: var(--purple-color);
@@ -149,6 +157,10 @@ svg {
   cursor: pointer;
 }
 
+.unscroll {
+  overflow: hidden;
+}
+
 /* burger */
 .burger {
   position: relative;
@@ -159,7 +171,7 @@ svg {
   height: 36px;
   border-radius: 36px;
   background-color: #f5f5f5;
-  z-index: 10;
+  z-index: 80;
 }
 
 .burger-flow {
@@ -209,6 +221,10 @@ svg {
 /* Nav */
 .nav {
   align-self: center;
+  background-color: #fff;
+  align-items: center;
+  z-index: 50;
+  height: 100%;
 }
 
 .nav__list {
@@ -273,6 +289,10 @@ svg {
 
 /* Hero */
 
+.hero {
+  margin-bottom: 100px;
+}
+
 .hero__wrapper {
   position: relative;
   padding-top: 58px;
@@ -300,7 +320,7 @@ svg {
 }
 
 .hero__content {
-  padding: clamp(50px, 4vw, 80px) 0 clamp(40px, 8vw, 160px);
+  padding: clamp(25px, 6.4vw, 80px) 0 clamp(40px, 8vw, 160px);
   background-image: url('../img/hero-bg.jpg');
   background-color: rgba(131, 0, 81);
   background-repeat: no-repeat;
@@ -314,13 +334,23 @@ svg {
   gap: 40px;
 }
 .hero__text {
-  margin: 0;
-  max-width: clamp(340px, 26vw, 550px);
   margin-bottom: 44px;
-  font-size: clamp(15px, 4vw, 17px);
+}
+.hero__text p {
+  margin: 0;
+  margin-bottom: 20px;
+  max-width: clamp(340px, 26vw, 550px);
+  font-size: clamp(14px, 2vw, 17px);
   font-weight: 400;
   line-height: 158.824%;
   color: var(--light-color);
+}
+
+.hero__text button {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 200%;
+  color: #f0ab00;
 }
 
 .hero__info {
@@ -352,7 +382,7 @@ svg {
   bottom: 13%;
   right: 0;
   width: clamp(340px, 49.5vw, 940px);
-  height: clamp(280px, 44.5vw, 780px);
+  height: clamp(280px, 38.5vw, 780px);
   background-color: #f0ab00;
 }
 
@@ -366,70 +396,21 @@ svg {
   margin-bottom: 59px;
 }
 
-/* Video */
-
-.video {
-  position: relative;
-  margin-bottom: 90px;
-}
-#video-over {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  display: none;
-}
-
-#video-play {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  height: clamp(100px, 14vw, 143px);
-  width: clamp(100px, 14vw, 143px);
-  border-radius: 50%;
-  background-image: url('../img/btn-play.svg');
-  background-size: clamp(100px, 14vw, 143px) clamp(100px, 14vw, 143px);
-  background-repeat: no-repeat;
-  z-index: 1;
-  cursor: pointer;
-  transition: 0.2s ease;
-  transition-property: opacity, visibility;
-}
-
-.video.is-playing #video-over {
-  display: block;
-}
-
-.video.is-playing #video-play {
-  opacity: 0;
-  visibility: hidden;
-}
-
 /* Partners */
 .partners {
-  padding-top: 100px;
+  padding-top: clamp(40px, 4vw, 100px);
   padding-bottom: 100px;
   background-color: #f5f5f5;
 }
 
 .partners__title {
-  margin-bottom: 67px;
+  margin-bottom: clamp(24px, 5vw, 67px);
 }
 
 .partners__items {
   max-width: 1750px;
   margin: 0 auto;
   padding: 0 15px;
-}
-
-.partners__wrapper {
-  /* display: flex;
-  gap: 40px; */
 }
 
 .partners__item {
@@ -513,6 +494,9 @@ svg {
 /* Media */
 
 @media (max-width: 1024px) {
+  .section-title {
+    text-align: center;
+  }
   .hero__wrapper {
     padding-top: 0;
   }
@@ -570,9 +554,14 @@ svg {
     height: 42px;
   }
 
+  .hero {
+    margin-bottom: 0;
+  }
+
   .hero__block {
     display: flex;
     align-items: flex-end;
+    gap: 20px;
   }
 
   .hero__block-content {
@@ -592,6 +581,7 @@ svg {
   .programme {
     display: none;
   }
+
   .partners__item {
     min-height: 250px;
     max-width: 100%;
@@ -602,6 +592,54 @@ svg {
   }
 
   .partners__info {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .btn-more {
+    display: block;
+  }
+
+  .hero__banner {
+    padding: 0;
+    /* position: static; */
+    width: 100%;
+
+    position: relative;
+    bottom: -3px;
+  }
+
+  .hero__banner img {
+    align-self: auto;
+  }
+  .hero__block {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .hero__block-content {
+    flex-direction: column-reverse;
+  }
+
+  .hero__info span {
+    text-align: center;
+  }
+
+  .hero__title {
+    text-align: center;
+  }
+
+  .hero__descr {
+    margin: 0 auto;
+  }
+
+  .hero__text {
+    margin-bottom: 0;
+  }
+
+  #more {
     display: none;
   }
 }
@@ -622,5 +660,9 @@ svg {
   .hero__banner {
     left: 0;
     width: 100%;
+  }
+
+  .hero__descr {
+    max-width: 250px;
   }
 }

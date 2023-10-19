@@ -68,7 +68,7 @@
         </div>
       </header>
       <main class="main">
-        <section class="hero section-offset">
+        <section class="hero">
           <div class="hero__wrapper">
             <div class="container">
               <div class="hero__top">
@@ -82,15 +82,20 @@
             <div class="hero__content">
               <div class="container hero__content-container">
                 <div class="hero__block">
-                  <p class="hero__text">
-                    Мы собрали компетенции Фонда «Сколково», научно-технологическую и отраслевую
-                    экспертизу партнеров, а также клиническую базу медицинского центра Hadassah
-                    Medical Moscow для доработки и внедрения инновационных решений цифровой медицины
-                    под потребности врачей и пациентов. Проект реализуется совместными усилиями
-                    Фонда «Сколково», медицинской клиники Hadassah Medical Moscow и
-                    биофармацевтической компании AstraZeneca при поддержке компании ПАО
-                    «Ростелеком».
-                  </p>
+                  <div class="hero__text">
+                    <p>
+                      Мы собрали компетенции Фонда «Сколково», научно-технологическую и отраслевую
+                      экспертизу партнеров, а также клиническую базу медицинского центра Hadassah
+                      Medical Moscow для доработки и внедрения инновационных
+                      <span id="more"
+                        >решений цифровой медицины под потребности врачей и пациентов. Проект
+                        реализуется совместными усилиями Фонда «Сколково», медицинской клиники
+                        Hadassah Medical Moscow и биофармацевтической компании AstraZeneca при
+                        поддержке компании ПАО «Ростелеком».</span
+                      >
+                    </p>
+                    <button class="btn-reset btn-more" id="moreBtn">Читать далее</button>
+                  </div>
                   <div class="hero__block-content">
                     <button class="btn-reset btn">Подать заявку</button>
                     <div class="hero__info">
@@ -106,13 +111,7 @@
         <section class="programme">
           <div class="container">
             <h2 class="programme__title section-title">Программа 2021</h2>
-            <div class="video">
-              <div class="video-control" id="video-over"></div>
-              <div class="video-control" id="video-play"></div>
-              <video id="video" controls width="100%">
-                <source src="files/video.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <div id="player"></div>
           </div>
         </section>
         <section class="partners">
@@ -221,5 +220,6 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/playerjs.js"></script>
   </body>
 </html>
