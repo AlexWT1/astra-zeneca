@@ -19,3 +19,31 @@ burger.addEventListener('click', () => {
   }
   move = !move;
 });
+
+$(function () {
+  var $videoContainer = $('.video'),
+    $videoControl = $('.video-control'),
+    $video = $('#video')[0];
+
+  $videoControl.click(function () {
+    if ($video.paused) {
+      $video.play();
+      $videoContainer.addClass('is-playing');
+    } else {
+      $video.pause();
+      $videoContainer.removeClass('is-playing');
+    }
+  });
+});
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});

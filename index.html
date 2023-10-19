@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstraZeneca</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/script.js"></script>
   </head>
@@ -67,7 +68,7 @@
         </div>
       </header>
       <main class="main">
-        <section class="hero">
+        <section class="hero section-offset">
           <div class="hero__wrapper">
             <div class="container">
               <div class="hero__top">
@@ -102,16 +103,99 @@
             </div>
           </div>
         </section>
+        <section class="programme">
+          <div class="container">
+            <h2 class="programme__title section-title">Программа 2021</h2>
+            <div class="video">
+              <div class="video-control" id="video-over"></div>
+              <div class="video-control" id="video-play"></div>
+              <video id="video" controls width="100%">
+                <source src="files/video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </section>
+        <section class="partners">
+          <div class="container">
+            <h2 class="partners__title section-title">О партнерах iLAB</h2>
+          </div>
+          <div class="partners__items swiper">
+            <div class="partners__wrapper swiper-wrapper">
+              <div class="partners__item">
+                <div class="partners__top">
+                  <img src="img/partners-01.png" alt="" />
+                  <p class="partners__descr">
+                    Международная научно-ориентированная биофармацевтическая компания, нацеленная на
+                    исследование, разработку и вывод на рынок рецептурных препаратов преимущественно
+                    в таких терапевтических областях, как онкология, кардиология, нефрология и
+                    метаболизм
+                    <a href="#">Читать далее</a>
+                  </p>
+                </div>
+                <div class="partners__info">
+                  <span>57 500</span>
+                  Сотрудников во всем мире
+                </div>
+              </div>
+              <div class="partners__item">
+                <div class="partners__top">
+                  <img src="img/partners-02.png" alt="" />
+                  <p class="partners__descr">
+                    Первый в России медицинский клинико-диагностический центр под управлением
+                    иностранного университетского госпиталя со столетней историей – Hadassah,
+                    единственной израильской больницы, состоящей в American Hospital Association<br />
+                    <a href="#">Читать далее</a>
+                  </p>
+                </div>
+
+                <div class="partners__info">
+                  <span>175 000</span>
+                  Проведенных за год манипуляций
+                </div>
+              </div>
+              <div class="partners__item">
+                <div class="partners__top">
+                  <img src="img/partners-03.png" alt="" />
+                  <p class="partners__descr">
+                    Крупнейший в России интегрированный провайдер цифровых услуг и решений, который
+                    присутствует во всех сегментах рынка и охватывает миллионы домохозяйств,
+                    государственных и частных организаций. Занимает лидирующие позиции на рынке
+                    услуг доступа<br />
+                    <a href="#">Читать далее</a>
+                  </p>
+                </div>
+
+                <div class="partners__info">
+                  <span>13,4 млн</span>
+                  Абонентов услуг ШПД
+                </div>
+              </div>
+              <div class="partners__item">
+                <div class="partners__top">
+                  <img src="img/partners-04.png" alt="" />
+                  <p class="partners__descr">
+                    GE Healthcare – бизнес-подразделение GE (NYSE: GE) с оборотом $16,7 млрд.
+                    Являясь одним из ведущих мировых производителей передового медицинского
+                    оборудования и цифровых решений, GE Healthcare помогает врачам получать
+                    качественную информацию и принимать<br />
+                    <a href="#">Читать далее</a>
+                  </p>
+                </div>
+                <div class="partners__info">
+                  <span>50 000</span>
+                  Единиц оборудования поставлено в Россию и СНГ
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
       </main>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   </body>
 </html>
-<!-- <span class="hero__banner-text hero__banner-text--01">iLAB</span>
-<span class="hero__banner-text hero__banner-text--02">LAB</span>
-<span class="hero__banner-text hero__banner-text--03">iLAB<span>
-<img class="hero__banner-img" src="img/hero-woman.png" alt=""> 
- -->
