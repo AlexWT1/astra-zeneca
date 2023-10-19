@@ -39,12 +39,24 @@ $(function () {
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   direction: 'horizontal',
-  slidesPerView: 4,
-  spaceBetween: 40,
-  loop: true,
-
+  slidesPerView: 1,
+  spaceBetween: 20,
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+  },
+  breakpoints: {
+    1760: {
+      slidesPerView: 4,
+      spaceBetween: 40,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
   },
 });
