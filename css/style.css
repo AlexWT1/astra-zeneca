@@ -491,6 +491,75 @@ svg {
   line-height: 100%;
 }
 
+/* Footer */
+.footer {
+  padding-top: clamp(40px, 7.85vw, 82px);
+  padding-bottom: clamp(32px, 5.7vw, 71px);
+}
+
+.footer__top {
+  margin-bottom: 108px;
+  display: flex;
+  align-items: center;
+  gap: 163px;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 146.667%;
+  color: #9db0ac;
+}
+
+.b-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.b-contact .contact__info span {
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: 700;
+  line-height: 133.333%;
+  color: #3f4444;
+}
+
+.b-contact .contact__info p {
+  margin: 0;
+  font-size: clamp(16px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 250%;
+  color: #3f4444;
+}
+
+.b-contact .contact__link {
+  display: flex;
+  flex-direction: column;
+}
+
+.b-contact .contact__link .contact__email {
+  font-size: clamp(12px, 1.5vw, 15px);
+  font-weight: 700;
+  line-height: 133.333%;
+  color: #830051;
+}
+
+.b-contact .contact__link .contact__tel {
+  font-size: clamp(20px, 1.5vw, 24px);
+  font-weight: 700;
+  line-height: 250%;
+  color: #3f4444;
+}
+
+.b-contact .contact__link .contact__tel span {
+  font-size: 15px;
+}
+
 /* Media */
 
 @media (max-width: 1024px) {
@@ -510,6 +579,26 @@ svg {
 
   .hero__banner {
     top: 17%;
+  }
+  .footer__top {
+    margin-bottom: clamp(40px, 7vw, 60px);
+  }
+
+  .footer__bottom {
+    flex-wrap: wrap;
+  }
+
+  .footer-item {
+    display: flex;
+    width: 50%;
+  }
+  .footer__top {
+    flex-direction: column;
+    gap: clamp(23px, 6vw, 46px);
+  }
+
+  .footer__conf {
+    justify-content: flex-end;
   }
 }
 
@@ -594,6 +683,11 @@ svg {
   .partners__info {
     display: none;
   }
+
+  .footer__bottom {
+    font-size: 12px;
+    line-height: 183.333%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -642,6 +736,19 @@ svg {
   #more {
     display: none;
   }
+
+  .b-contact {
+    flex-direction: column;
+  }
+  .b-contact .contact__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .b-contact .contact__link {
+    align-items: center;
+  }
 }
 
 @media (max-width: 425px) {
@@ -664,5 +771,14 @@ svg {
 
   .hero__descr {
     max-width: 250px;
+  }
+
+  .footer-item {
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-item {
+    justify-content: center;
   }
 }
